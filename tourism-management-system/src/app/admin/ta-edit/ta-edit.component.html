@@ -1,0 +1,57 @@
+<div class="container">
+        <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <h6>Title</h6>
+                <input formControlName="t_name" />
+                <span class="text text-danger"
+                    *ngIf="editForm.get('t_name').invalid &&editForm.get('t_name').touched && editForm.get('t_name').errors.required">
+                    Title is required.<br />
+                </span>
+            </div>
+            <div class="form-group">
+                <h6>Email</h6>
+                <input formControlName="t_email" />
+                <span class="text text-danger"
+                    *ngIf="editForm.get('t_email').invalid &&editForm.get('t_email').touched && editForm.get('t_email').errors.required">
+                    Email is required.<br />
+                </span>
+            </div>
+            <div class="form-group">
+                <h6>Phone Number</h6>
+                <input formControlName="t_phone" maxlength="10" />
+                <span class="text text-danger"
+                    *ngIf="editForm.get('t_phone').invalid &&editForm.get('t_phone').touched && editForm.get('t_phone').errors.required">
+                    Phone Number is required.<br />
+                </span>
+            </div>
+            <div class="form-group">
+                <h6>Address</h6>
+                <textarea formControlName="t_address" rows="5"></textarea>
+                <span class="text text-danger"
+                    *ngIf="editForm.get('t_address').invalid &&editForm.get('t_address').touched && editForm.get('t_address').errors.required">
+                    Address is required.<br />
+                </span>
+            </div>
+            <div class="form-group">
+                <h6>Role</h6>
+                <select class="custom-select form-control" (change)="updateProfile($event.target.value)"
+                    formControlName="t_role">
+                    <option value="" selected>Choose...</option>
+                    <option *ngFor="let x of taDrop" value="{{x}}">{{x}}
+                    </option>
+                </select>
+            </div>
+    
+            <div class="form-group">
+                <h6>City/Area</h6>
+                <input formControlName="t_city" />
+                <span class="text text-danger"
+                    *ngIf="editForm.get('t_city').invalid &&editForm.get('t_city').touched && editForm.get('t_city').errors.required">
+                    City/Area is required.<br />
+                </span>
+            </div>
+            <div style="padding-left: 350px;">
+                <button type="submit" class="btn btn-info" [disabled]="!editForm.valid">Update</button>
+            </div>
+        </form>
+    </div>

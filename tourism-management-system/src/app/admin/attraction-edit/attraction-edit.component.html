@@ -1,0 +1,56 @@
+<ul>
+    <li>
+        <button class="button"><a routerLink="../../admin-list" class=" btn-floating btn-large black pulse"><i
+                class="material-icons">arrow_back_ios</i></a></button>
+    </li>
+</ul>
+<div style="text-align: center;font-size: x-large;" class="alert alert-info"><b>Edit Attraction Details</b>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="card-body">
+            <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <h6>Title</h6>
+                    <input formControlName="title" />
+                    <span class="text text-danger"
+                        *ngIf="editForm.get('title').invalid &&editForm.get('title').touched && editForm.get('title').errors.required">
+                        Title is required.<br />
+                    </span>
+                </div>
+                <div class="form-group">
+                    <h6>Description:</h6>
+                    <textarea formControlName="description" rows="5"></textarea>
+                    <span class="text text-danger"
+                        *ngIf="editForm.get('description').invalid &&editForm.get('description').touched && editForm.get('description').errors.required">
+                        Description is required.<br />
+                    </span>
+                </div>
+                <div class="form-group">
+                    <h6>Category</h6>
+                    <select class="custom-select form-control" (change)="updateProfile($event.target.value)"
+                        formControlName="type">
+                        <option value="">Choose...</option>
+                        <option *ngFor="let x of AttractionType" value="{{x}}">{{x}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group" *ngIf="flag">
+                    <h6>Latitude:</h6>
+                    <input formControlName="latitude" />
+                </div>
+                <div class="form-group" *ngIf="flag">
+                    <h6>Longitude:</h6>
+                    <input formControlName="longitude" />
+                </div>
+                <div class="form-group">
+                    <input type="file" class="btn btn-primary" (change)="onfileselected($event)">
+                </div>
+                <div style="padding-left: 350px;">
+                    <button type="submit" class="button">Edit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+<ul>
+    <li>
+        <button class="button"><a routerLink="" class=" btn-floating btn-large black pulse"><i class="material-icons">arrow_back_ios</i></a></button>
+    </li>
+</ul>
+
+<p *ngIf="flag">
+    <span style="text-align: center;" class="alert alert-success">Query is recorded successfully</span>
+</p>
+<div class="alert alert-info" style="font-size: x-large;text-align: center;">
+    Get in Touch
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="card-body">
+            <form [formGroup]="queryForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <h6>Name</h6>
+                    <input formControlName="q_name" />
+                    <span class="text text-danger"
+                        *ngIf="queryForm.get('q_name').invalid &&queryForm.get('q_name').touched && queryForm.get('q_name').errors.required">
+                        Name is required.<br />
+                    </span>
+                </div>
+                <div class="form-group">
+                    <h6>Email:</h6>
+                    <input formControlName="q_email" />
+                    <span class="text text-danger"
+                        *ngIf="queryForm.get('q_email').invalid &&queryForm.get('q_email').touched && queryForm.get('q_email').errors.required">
+                        Email is required.<br />
+                    </span>
+                </div>
+                <div class="form-group">
+                    <h6>What are you giving?</h6>
+                    <select class="custom-select form-control" (change)="updateProfile($event.target.value)"
+                        formControlName="q_cat">
+                        <option value="">Choose...</option>
+                        <option *ngFor="let x of cat" value="{{x}}">{{x}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <h6>Phone:</h6>
+                    <input formControlName="q_phone" maxlength="10" />
+                    <span class="text text-danger"
+                        *ngIf="queryForm.get('q_phone').invalid &&queryForm.get('q_phone').touched && queryForm.get('q_phone').errors.required">
+                        Phone is required.<br />
+                    </span>
+                </div>
+                <div class="form-group">
+                    <h6>Message:</h6>
+                    <textarea formControlName="q_msg" rows="5" cols="25"></textarea>
+                    <span class="text text-danger"
+                        *ngIf="queryForm.get('q_msg').invalid &&queryForm.get('q_msg').touched && queryForm.get('q_msg').errors.required">
+                        Message is required.<br />
+                    </span>
+                </div>
+                <div style="padding-left: 350px;">
+                    <button type="submit" class="btn btn-info" [disabled]="!queryForm.valid">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

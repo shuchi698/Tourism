@@ -1,0 +1,77 @@
+
+<div id="imgbox">
+  <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="assets/images/mysorepak.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3 style="color:red;font-family:Pacifico,cursive;">Mysore</h3>
+          <h5 class="light black-text text-lighten-3" style=" font-family:Pacifico,cursive;">Mysore Pak .
+          </h5>
+        </div>
+      </li>
+      <li>
+        <img src="assets/images/karnatakathali.jpg"> <!-- random image -->
+        <div class="caption left-align">
+          <h3 style="color:magenta;font-family:Pacifico,cursive;">Karnataka Thali</h3>
+          <h5 class="light grey-text text-lighten-3" style=" font-family:Pacifico,cursive;">Traditional karnataka cuisine</h5>
+        </div>
+      </li>
+      <li>
+        <img src="assets/images/panipuri.jpg"> <!-- random image -->
+        <div class="caption left-align">
+          <h3 style="color:red;font-family:Pacifico,cursive;">Bangalore</h3>
+          <h5 class="light black-text text-lighten-3" style=" font-family:Pacifico,cursive;">Panipuri.
+          </h5>
+        </div>
+      </li>
+      <li>
+        <img src="assets/images/udupicusine.jpg"> <!-- random image -->
+        <div class="caption right-align">
+          <h3 style="color:magenta;font-family:Pacifico,cursive;">Udupi!</h3>
+          <h5 class="light black-text text-lighten-3" style=" font-family:Pacifico,cursive;">Udupi cuisine.
+          </h5>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</div>
+<div id="test2">
+
+  <div class="grid-container">
+
+    <div class="item1" *ngFor="let temp of cuisines;let i=index" style="padding-top: 20px;">
+      <div class="card" style="width: 18rem; height:25rem;">
+        <img class="card-img-top" width="150px;" height="190px;" [src]="transform(temp)" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title alert alert-info">
+            {{temp.title}}
+          </h5><br />
+          <p class="card-text">{{temp.description| slice:0:20}}....</p><br /><br />
+          <button type="button" class="btn btn-primary" (click)="openModal(template,i)">Know
+            more..</button><br /><br />
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <ng-template #template>
+
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">{{ctitle}}</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <br /><br />
+    <div class="modal-body ">
+      {{desc}}
+    </div>
+
+  </ng-template>
+
+
+</div>
+

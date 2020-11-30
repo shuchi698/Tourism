@@ -1,0 +1,26 @@
+<ul>
+        <li>
+            <button class="button"><a routerLink="../admin-panel" class=" btn-floating btn-large black pulse"><i class="material-icons">arrow_back_ios</i></a></button>
+        </li>
+    </ul>
+    <div style="text-align: center;font-size: x-large;" class="alert alert-info"><b>List of Attractions</b></div>
+    
+<div class="grid-container">
+    <div *ngFor="let attr of Attraction;let i =index ">
+        <div class="{{item+i}}">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" [src]="transform(attr)" style="height: 150px;" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"><b>{{attr.type}}<br/><br/> {{attr.title}}</b></h5>
+                <span *ngIf="attr.type !='Cuisine'">    Latitude:<p class="card-text">{{attr.latitude}}</p>
+                    Longitude:<p class="card-text">{{attr.longitude}}</p></span>
+                    <span *ngIf="attr.type =='Cuisine'"><br/><br/><br/><br/><br/></span><br/>
+                    <button type="button" class="button"
+                        [routerLink]="['../admin-edit',attr._id]">Edit</button>&nbsp;
+                    <button type="button" class="button" (click)="removeAttraction(attr,i)">Delete</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

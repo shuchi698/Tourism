@@ -1,0 +1,28 @@
+<ul>
+    <li>
+        <button class="button"><a routerLink="" class=" btn-floating btn-large black pulse"><i class="material-icons">arrow_back_ios</i></a></button>
+    </li>
+</ul>
+<div style="text-align: center;font-size: x-large;" class="alert alert-info"><b>List of all Agents/Guides</b></div>
+<table id="example" class="display" style="width:1360px;" datatable [dtOptions]="dtOptions" class="row-border hover">
+    <thead class="table-success">
+        <tr>
+            <th scope="col">Guide/Agency Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Contact</th>
+            <th scope="col">Address</th>
+            <th scope="col">Type</th>
+            <th scope="col">City</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let x of ta; let i = index">
+            <th scope="row">{{x.t_name}}</th>
+            <td>{{x.t_email}}</td>
+            <td>{{x.t_phone}}</td>
+            <td>{{x.t_address}}</td>
+            <td>{{x.t_role}}</td>
+            <td>{{x.t_city}}</td>
+        </tr>
+    </tbody>
+</table>

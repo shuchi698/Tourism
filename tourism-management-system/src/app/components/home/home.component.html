@@ -1,0 +1,305 @@
+<ul id="slide-out" class="sidenav">
+    
+        <div class="user-view">
+            <div class="background">
+                <h1><b>Welcome to Tourism-Management-System</b></h1>
+                
+                <!--<img src="">-->
+            </div>
+<a><img width="1000px" height="500px" style="border-radius: 60px" src="assets/images/kt.jpg"></a>
+        </div>
+   
+
+        <div class="divider"></div>
+   
+    <span *ngIf="!avail;else elseBlock1">
+        <li><button class="button"><a routerLink='auth/login' class="waves-effect btn-large cyan pulse"><i
+                    class="material-icons">person</i><b>Login</b></a></button></li>
+        <li><button class="button"><a routerLink='auth/register' class="waves-effect btn-large cyan pulse">
+                <i class="material-icons">person_add</i>
+                <b>Register</b></a></button></li>
+    </span>
+    <ng-template #elseBlock1>
+        <li><button class="button"><a role="button" (click)="logout()" class="waves-effect btn-large cyan pulse"><i
+                    class="material-icons">person</i><b>Logout</b></a></button></li>
+    </ng-template>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <!--<li><a class="subheader">Attractions</a></li>
+    <li><a routerLink='attractions/temples'><i class="material-icons">flag</i>Temples</a></li> -->
+    <ul class="collapsible">
+        <li>
+            <div class="collapsible-header waves-effect btn-large cyan pulse">
+                <i class="material-icons">card_travel</i>Attractions</div>
+            <div class="collapsible-body">
+                <button class = "button"><a routerLink="attractions/temples"><i class="material-icons">flag</i><b>Temples</b></a></button><br>
+                <button class = "button"><a routerLink="attractions/cuisines"><i class="material-icons">flag</i>
+                    <b>Cuisine</b></a></button>
+            </div>
+        </li>
+    </ul>
+    
+        <div class="divider"></div>
+    
+    <li><button class="button"><a routerLink="find-agent" class="btn-large waves-effect cyan pulse"><i class="material-icons">search</i><b>FInd
+            Guide/Agent</b></a></button>
+    </li>
+    
+        <div class="divider"></div>
+    
+    <li><button class="button"><a href="https://en.wikipedia.org/wiki/Hampi" target="_blank" class="waves-effect cyan pulse btn-large">
+            <i class="material-icons">all_inclusive</i> <b>HAMPI</b></a></button></li>
+    <li>
+        <button class="button"><a routerLink="query" class="waves-effect cyan pulse btn-large">
+            <i class="material-icons">near_me</i> <b>Get in Touch</b>
+        </a></button>
+    </li>
+    <li>
+        <button class="button"><a routerLink="vfive" class="waves-effect cyan pulse btn-large"><i class="material-icons">video_library
+            </i><b>Glimpes</b> 
+        </a></button>
+    </li>
+</ul>
+<div class="header" style="background: rgba(8, 8, 8, 0.65);">
+    <a href="#" data-target="slide-out" class="sidenav-trigger btn-floating btn-large black pulse"><i
+            class="material-icons">menu</i></a>
+
+    <span *ngIf="avail;else elseBlock" style="position:relative;left:1000px;color:white;font-size: x-large;">Hello
+        {{username}}</span>
+    <ng-template #elseBlock><span style="position:relative;left:1100px;color:black; font-size: x-large;">Hello
+            Guest</span>
+    </ng-template>
+</div>
+<div>
+    
+    <div class="slider">
+        <ul class="slides">
+
+            <li>
+                <img src="assets/images/mysorepalace.jpg"> <!-- random image -->
+                <div class="caption left-align">
+                    <h3><b>Mysore Palace</b></h3>
+                    <h5 class="light grey-text text-lighten-3">The Mysore Palace is a historical palace and the royal residence at Mysore in the Indian State of Karnataka. It is the official residence of the Wadiyar dynasty and the seat of the Kingdom of Mysore. </h5>
+                </div>
+            </li>
+            <li>
+                <img src="assets/images/lalbagh.jpg"> <!-- random image -->
+                <div class="caption left-align">
+                    <h3><b>Lalbagh Botanical Garden</b></h3>
+                    <h5 class="light grey-text text-lighten-3">Lalbagh Botanical Garden is located in Bangalore and is nationally and internationally renowned centre for botanical artwork, scientific study of plants and also conservation of plants. </h5>
+                </div>
+            </li>
+            <li>
+                <img src="assets/images/hampi.jpg"> <!-- random image -->
+                <div class="caption center-align">
+                    <h3><b>Virupaksha Temple,Hampi</b></h3>
+                    <h5 class="grey-text text-lighten-3">Virupaksha Temple is located in Hampi in the Ballari district of Karnataka, India. It is part of the Group of Monuments at Hampi, designated as a UNESCO World Heritage Site.</h5>
+                </div>
+            </li>
+            <li>
+                <img src="assets/images/jogfalls.jpg"> <!-- random image -->
+                <div class="caption center-align">
+                    <h3><b>Jog Falls</b></h3>
+                    <h5 class="grey-text text-lighten-3">Jog Falls is a waterfall on the Sharavati river located in the Western Ghats siddapura taluk, Uttara Kannada district. It is the second highest plunge waterfall in India.</h5>
+                </div>
+            </li>
+            <li>
+                <img src="assets/images/siva.jpg"> <!-- random image -->
+                <div class="caption center-align">
+                    <h3><b>Murdeshwar</b></h3>
+                    <h5 class="light grey-text text-lighten-3">Murdeshwar is a town in Bhatkal Taluk of Uttara Kannada district in the state of Karnataka, India. </h5>
+                </div>
+            </li>
+            <li>
+                <img src="assets/images/kushalnagar.jpg"> <!-- random image -->
+                <div class="caption left-align">
+                    <h3><b>KushalNagar</b></h3>
+                    <h5 class="light grey-text text-lighten-3">Kushalanagar is a city located in the Kodagu district of Karnataka state of India. Surrounded by Kaveri river, it is the gateway of the Coorg district.</h5>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+<div class="section white" style=" background-image: -webkit-linear-gradient(90deg, #ff07ea 100%, #cc5fff 100%);
+background-image: linear-gradient(90deg, #ff07ea 0%, #cc5fff 100%);height:100%;">
+    <br /><br /><br />
+    <div class="row container" style="position:relative;left:60px;">
+        <h3 class="header" style="font-family:Pacifico,cursive;"><b>Center Of Attractions</b></h3>
+        <br /><br />
+        <div class="row">
+            <div class="col">
+                <div>
+
+                    <span id="one" class="index badge badge-light">1.Mysore – City of Old World Charm</span><br><br />
+                    <span id="two" class="index badge badge-light">2.Bangalore – The City of Diverse Existence</span><br><br />
+                    <span id="three" class="index badge badge-light">3.Gokarna – Tranquility at its Best</span><br><br />
+                    <span id="four" class="index badge badge-light">4.Belur and Halebidu – The Majestic Temple Towns</span><br><br />
+                    <span id="five" class="index badge badge-light">5.Coorg – Queer but Captivating</span>
+
+
+                </div>
+            </div>
+            <div class="col-10">
+                <div>
+
+                    <div id="first">
+                        <div class="media">
+                            <img src="assets/images/dusshera.jpg" style="border-radius:20px;" class="mr-3" alt="..."
+                                width="300px;" height="200px;">
+                            <div class="media-body" style="margin:20px;">
+                                <h5 class="mt-0"><b>Dussehra Festival</b></h5>
+                                Dussehra (Vijaya Dashami, Dasara, or Dashain) is a Hindu festival that celebrates the victory of good over evil. It is a gazetted holiday in India, which is marked on the 10th day of the bright half (Shukla Paksha) of the month of Ashvin (Ashwayuja), according to the Hindu calendar.
+                                <br>
+                                Dussehra, also called Dasara or Vijayadashami, in Hinduism, holiday marking the triumph of Rama, an avatar of Vishnu, over the 10-headed demon king Ravana, who abducted Rama’s wife, Sita.<br />
+                                The festival’s name is derived from the Sanskrit words dasha (“ten”) and hara (“defeat”). Symbolizing the victory of good over evil, Dussehra is celebrated on the 10th day of the month of Ashvina (September–October), the seventh month of the Hindu calendar, with the appearance of the full moon, an event called the “bright fortnight” (shukla paksha). Dussehra coincides with the culmination of the nine-day Navratri festival and with the tenth day of the Durga Puja festival. For many, it marks the beginning of preparation for Diwali, which occurs 20 days after Dussehra.
+                                <h6> Dussehra is celebrated with great fervour and fanfare </h6>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div id="second" style="display:none;">
+
+                        <div class="media">
+                            <img src="assets/images/bang1.jpg" style="border-radius:20px;" class="mr-3" alt="..."
+                                width="300px;" height="200px;">
+                            <div class="media-body" style="margin:20px;">
+                                <h5 class="mt-0"><b>Bangalore</b></h5>
+                                Bangalore is the most cosmopolitan city in India.<br />
+                                It is a melting pot that is home to people from different backgrounds, cultures and skills.<br />
+                                It is the hub of Information Technology that houses a huge number of Software, Hardware and telecom companies that provide services to clients around the world.<br>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="third" style="display:none;">
+                        <div class="media">
+                            <img src="assets/images/gokarna.jpg" style="border-radius:20px;" class="mr-3" alt="..."
+                                width="300px;" height="200px;">
+                            <div class="media-body" style="margin:20px;">
+                                <h5 class="mt-0"><b>Gokarna</b></h5>
+                                Gokarna, a small and less populated town is situated in the north Kannad district of Karnataka. This is normally on the “to-go” places list of tourists due to its peaceful ambience. Gokarna lures the tourists with its enthralling beaches and pious temples.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="fourth" style="display:none;">
+                        <div class="media">
+                            <img src="assets/images/belur.jpg" style="border-radius:20px;" class="mr-3" alt="..."
+                                width="300px;" height="200px;">
+                            <div class="media-body" style="margin:20px;">
+                                <h5 class="mt-0"><b>Belur and Halebidu</b></h5>
+                                Belur, located on the banks of the Yagachi river is the erstwhile capital of Hoysala empire. Due to this rich history surrounding this town, it consists of various temples with marvelous architecture and perfectly crafted sculptures.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="fifth" style="display:none;">
+
+                        <div class="media">
+                            <img src="assets/images/coorg.jpg" style="border-radius:20px;" class="mr-3" alt="..."
+                                width="300px;" height="200px;">
+                            <div class="media-body" style="margin:20px;">
+                                <h5 class="mt-0"><b>Coorg</b></h5>
+                                Coorg is one of the pristine, less crowded hill stations. Its natural and lush greenery contributes to its scenic beauty. It is an ideal summer getaway.
+
+Coorg is bestowed with aromatic coffee plantations, breathtaking waterfalls, green mountains, and stunning views. Another unique attraction of Coorg is the Tibetan Monastery.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="parallax-container">
+    <div style="position:relative;left:900px;">
+        <button id="first1" class="square_btn">Heritage</button>
+        <button id="second1" class="square_btn" style="margin:20px;">Falls</button>
+        <button id="third1" class="square_btn">National Parks</button>
+    </div>
+    <div id="div1">
+        <div class="card" style="width: 18rem;margin:50px;position:relative;left:100px;display:inline-block;">
+            <img src="assets/images/badami.jpg" class="card-img-top" alt="..." style="height:195px;">
+            <div class="card-body">
+                <h5 class="card-title"><b>Badami</b></h5>
+                <p class="card-text">The Badami cave temples are a complex of Hindu and Jain cave temples located in Badami, a town in the Bagalkot district in northern part of Karnataka, India. The caves are considered an example of Indian rock-cut architecture, especially Badami Chalukya architecture, which dates from the 6th century. Badami was previously known as Vataapi Badami, the capital of the early Chalukya dynasty, which ruled much of Karnataka from the 6th to the 8th century. Badami is situated on the west bank of a man-made lake ringed by an earthen wall with stone steps; it is surrounded on the north and south by forts built in later times.</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;margin:50px;position:relative;left:90px;display:inline-block;">
+            <img src="assets/images/pattadakal.jpg" class="card-img-top" alt="..." style="height:180px;">
+            <div class="card-body">
+                <h5 class="card-title"><b>Pattadakal</b></h5>
+                <p class="card-text">Pattadakal, in Karnataka, represents the high point of an eclectic art which, in the 7th and 8th centuries under the Chalukya dynasty, achieved a harmonious blend of architectural forms from northern and southern India.</p>
+                <br />
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;display:inline-block;position:relative;left:130px;">
+            <img src="assets/images/belur1.jpg" class="card-img-top" alt="..." style="height:180px;">
+            <div class="card-body">
+                <h5 class="card-title"><b>Belur</b></h5>
+                <p class="card-text">Located in the district of Hassan, Belur lies in the state of Karnataka in India. This ancient town which was known by the name Velapura earlier is situated on the banks of the river Yagachi in Hassan. This was the capital of the Hoysala Empire during the 11th century. The number of monuments and temples built by the Hoysala rulers over a period of 300 years gives enough proof for their love of architecture and art and the best among these lies in Belur.<br />
+
+                </p>
+                <br />
+            </div>
+        </div>
+
+    </div>
+
+    <div id="div2" style="display:none;">
+        <div class="card" style="width: 18rem;margin:50px;position:relative;left:100px;display:inline-block;">
+            <img src="assets/images/ap.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><b>Apsarkonda Falls</b></h5>
+                <p class="card-text">Apsarkonda is an emerging tourist village near Honnavar, in the district of Uttara Kannada, Karnataka, India. It is situated 8 km from the Honnavar bus stand.</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;margin:50px;position:relative;left:90px;display:inline-block;">
+            <img src="assets/images/dabbe.jpg" class="card-img-top" style="height:200px;" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><b>Dabbe Falls</b></h5>
+                <p class="card-text">Dabbe Falls is a waterfall located in place named Dabbe near Hosagadde in Sagar taluk, Shivamogga District in Karnataka state, India. The height of the falls is 110 meters. One can take a guide from Muppane nature camp which is 10 km away from Dabbe Falls.</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;display:inline-block;position:relative;left:130px;">
+            <img src="assets/images/gokak.jpg" class="card-img-top" alt="..." style="height:200px;">
+            <div class="card-body">
+                <h5 class="card-title"><b>Gokak Falls</b></h5>
+                <p class="card-text">The Gokak Falls is a waterfall located on the Ghataprabha River in Belagavi district of Karnataka, India. The waterfall is six and a half kilometers away from Gokak town.</p>
+            </div>
+        </div>
+
+    </div>
+    <div id="div3" style="display:none;">
+        <div class="card" style="width: 18rem;margin:50px;position:relative;left:90px;display:inline-block;">
+            <img src="assets/images/na.jpg" class="card-img-top" alt="..." style="height:200px;">
+            <div class="card-body">
+                <h5 class="card-title"><b>Nagarhole National Park</b></h5>
+                <p class="card-text">Nagarhole National Park is a national park located in Kodagu district and Mysore district in Karnataka, India.[1] It is one of India's premier Tiger Reserves along with the adjoining Bandipur Tiger Reserve and Wayanad Wildlife Sanctuary.</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;margin:50px;position:relative;left:90px;display:inline-block;">
+            <img src="assets/images/ku.jpg" class="card-img-top" alt="..." style="height:200px;">
+            <div class="card-body">
+                <h5 class="card-title"><b>Kudremukh National Park</b></h5>
+                <p class="card-text">The park consists of 600 km² of undulating mountains and tropical wet evergreen forest. It began its existence as a Reserved Forest in 1916, and was designated a national park in 1987. Kudremukh means 'horse face', and is in reference to the appearance of a mountain peak located within the park. Kudremukh (Kannada: ಕುದುರೆಮುಖ) also spelled Kuduremukha is a mountain range in Chikkamagaluru district, in Karnataka, India. </p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;margin:50px;position:relative;left:90px;display:inline-block;">
+            <img src="assets/images/ban.jpg" class="card-img-top" alt="..." style="height:200px;">
+            <div class="card-body">
+                <h5 class="card-title"><b>Bannerghatta National Park</b></h5>
+                <p class="card-text">Bannerghatta National Park, near Bangalore, Karnataka, was founded in 1970 and declared as a national park in 1974. In 2002 a portion of the park, became a biological reserve, the Bannerghatta Biological Park. It is a popular tourist destination with a zoo, a pet corner, an animal rescue centre, a butterfly enclosure, an aquarium, a snake house and a safari park.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</div>

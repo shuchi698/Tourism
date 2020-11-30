@@ -1,0 +1,26 @@
+<ul>
+    <li>
+        <button class="button"><a routerLink="../admin-panel" class=" btn-floating btn-large black pulse"><i class="material-icons">arrow_back_ios</i></a></button>
+    </li>
+</ul>
+<div style="text-align: center;font-size: x-large;" class="alert alert-info"><b>List of Queries/Feedback</b></div>
+<table id="example" class="display" style="width:1360px;" datatable [dtOptions]="dtOptions" class="row-border hover">
+    <thead class="table-success">
+        <tr>
+            <th scope="col">Category</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Message</th>
+            <th scope="col">Phone Number</th>
+        </tr>
+    </thead> 
+    <tbody>
+        <tr *ngFor="let x of q; let i = index">
+            <th scope="row">{{x.q_cat}}</th> 
+            <td>{{x.q_name}}</td>
+            <td>{{x.q_email}}</td>
+            <td>{{x.q_msg}}</td>
+            <td>{{x.q_phone}}</td>
+        </tr>
+    </tbody>
+</table>
